@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update Vacations</title>
+</head>
+<body>
+	<form action="#" th:action="@{/update/{id}(id=${destination.id})}"
+		th:object="${destination}" method="post">
+		
+		<label for="country">Country</label> <input type="text" th:field="*{country}"
+			id="country" placeholder="Country"> <span
+			th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></span>
+			
+			<label for="province">Province</label> <input type="text" th:field="*{province}"
+			id="province" placeholder="Province"> <span
+			th:if="${#fields.hasErrors('province')}" th:errors="*{province}"></span> 
+			
+			<label for="city">City</label> <input type="text" th:field="*{city}" id="city"
+			placeholder="City"> <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
+			
+			<label for="duration.travelDays">Travel Days</label> <input type="text" th:field="*{duration.travelDays}"
+			id="duration.travelDays" placeholder="Travel Days"> <span th:if="${#fields.hasErrors('duration.travelDays')}"
+			th:errors="*{duration.travelDays}"></span> 
+			
+			<label for="duration.totalDays">Total Days</label>
+		<input type="text" th:field="*{duration.totalDays}" id="duration.totalDays"
+			placeholder="Total Days"> <span
+			th:if="${#fields.hasErrors('duration.totalDays')}"
+			th:errors="*{duration.totalDays}"></span> 
+			
+			<input type="submit" value="Update Vacation">
+			
+	</form>
+
+</body>
+</html>

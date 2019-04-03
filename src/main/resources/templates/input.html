@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add A Destination</title>
+</head>
+<body>
+	<form name='f' th:object="${newDestination}" th:action="@{/inputDestination}"
+		method='POST'>
+		Country: <input name="country" size="25"> <br /> 
+		Province: <input name="province" size="25"><br /> 
+		City: <input name="city" size="25"><br /> 
+		Travel Days: <input name="duration.travelDays" size="3"><br /> 
+		Total Days: <input name="duration.totalDays" size="3"><br />
+			
+		<input name="submit" type="submit" value="submit" />
+	</form>
+	<a href="viewAll">See Our Vacations</a>
+
+</body>
+</html>
